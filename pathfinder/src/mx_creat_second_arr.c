@@ -68,5 +68,13 @@ int ***mx_creat_second_arr(int i, int **new) {
 		n[2][k] = k;
 		ser[k] = matrix(n, i, new, k);
 	}
+		for (int j = 0; j < i; j++) {
+		for (int h = 0; h < i + 1; h++) {
+			for (int l = 0; l < i; l++)
+				printf("%i\t", ser[j][h][l]);
+			printf("\n");
+		}
+		printf("\n");
+	}
 	return ser;
 }

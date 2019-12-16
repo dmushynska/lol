@@ -37,6 +37,8 @@ static bool word(const char *str) {
 static bool sortchar(const char *str) {
 	int i = mx_get_char_index(str, ',');
 
+	if (str[i + 1] == '0')
+		return false;
 	if (mx_strlen(&str[i]) > 10)
 		return false;
 	if (mx_isdigit(str[i + 1]) != 1)

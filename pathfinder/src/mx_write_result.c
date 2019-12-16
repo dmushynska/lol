@@ -37,7 +37,7 @@ void mx_write_result(int ***ser, char **arr, int k) {
 		for (int i = j + 1; i < k; i++) {
 			if (ser[j][2][i] == j)
 				print_first_line(ser, arr, j, i);
-			if (ser[j][p][i] != j && ser[j][p + 1][i] != j) {
+			if (ser[j][p][i] != j) {
 				heh->i = i;
 				heh->j = j;
 				mx_search_rout(ser, heh, j, i);

@@ -3,6 +3,8 @@
 static void new_arr_2(t_hehx *heh) {
 	int l = heh->k;
 
+	if (heh->new_arr == NULL)
+		return;
 	while (heh->new_arr[--l] == NULL) {}
 	for (int kek = heh->kek + 1; kek < heh->k; kek++, l--) {
 		heh->new_arr_2[kek] = mx_strdup(heh->new_arr[l]);
@@ -11,11 +13,13 @@ static void new_arr_2(t_hehx *heh) {
 	}
 }
 
-static void create_new_arr_2(t_hehx *heh, int h) {
+static void create_new_arr_2(t_hehx *heh, int h, int *str_result) {
 		heh->new_arr_2 = (char **)(malloc)(sizeof(char *) * (heh->k + 1));
 	for (int g = 0; g < heh->k + 1; g++)
 		heh->new_arr_2[g] = NULL;
 	heh->new_arr_2[heh->kek++] = mx_strdup(heh->arr[h]);
+	for (int n = 0; n < heh->k; n++)
+		str_result[n] = -1;
 }
 
 static int *search_distance_th(int **ser, int i, t_hehx *heh, int j) {
@@ -24,9 +28,7 @@ static int *search_distance_th(int **ser, int i, t_hehx *heh, int j) {
 	int h = i;
 	int *str_result = (int *)(malloc)(sizeof(int) * (heh->k));
 
-	create_new_arr_2(heh, h);
-	for (int n = 0; n < heh->k; n++)
-		str_result[n] = -1;
+	create_new_arr_2(heh, h, str_result);
 	if (ser[0][h] != i)
 		str_result[index++] = new;
 	while (h != j) {
@@ -53,8 +55,7 @@ static void int_dub(int *str_new_result, int next, t_hehx *heh, int *int_str) {
 	}
 	int_str[lol++] = next;
 	for (heh->y = lol; heh->y < heh->k + lol 
-		&& str_new_result[kek] > 0; heh->y++, kek++)
-	{
+		&& str_new_result[kek] > 0; heh->y++, kek++) {
 		int_str[lol] = str_new_result[kek];
 	}
 	free(str_new_result);
