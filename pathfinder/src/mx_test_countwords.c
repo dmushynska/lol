@@ -35,7 +35,6 @@ static char **create_arr(int j) {
     char **arr = (char **)(malloc)(sizeof(char*) * (j + 1));
     if (j == 0)
         exit(0);
-    mx_printint(1);
     for (int i = 0; i <= j; i++)
         arr[i] = NULL;
     return arr;
