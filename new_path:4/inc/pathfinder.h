@@ -15,6 +15,7 @@ typedef struct s_add_in_func {
     int lol;
     int kek;
     int next;
+    int vlad;
     int new_m;
     int save_h;
     int *str_result;
