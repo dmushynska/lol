@@ -42,8 +42,7 @@ void mx_copy(char **arr, char ***arr2, t_hehx *heh) {
 
     for (u = 0; u < heh->k + 1; u++)
         new_arr[u] = NULL;
-    for (u = 0; arr[u] != NULL && u < heh->k + 1; u++) {
+    for (u = 0; arr[u] != NULL && u < heh->k + 1; u++)
         new_arr[u] = mx_strdup(arr[u]);
-    }
     *arr2 = new_arr;
 }

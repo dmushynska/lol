@@ -14,7 +14,8 @@
 //     return j - k;
 // }
 
-// static void sort_list(t_result **struct_result, bool (*cmp)(char **s1, char **s2, char **arr, t_hehx *heh), t_hehx *heh) {
+// static void sort_list(t_result **struct_result,
+// bool (*cmp)(char **s1, char **s2, char **arr, t_hehx *heh), t_hehx *heh) {
 //     t_result *i;
 //     t_result *j;
 //     t_result *l;
@@ -22,9 +23,6 @@
 //     for (l = *struct_result; l != NULL; l = l->next)
 //         for (i = *struct_result; i != NULL; i = i->next)
 //             for (j = i->next; j != NULL; j = j->next) {
-//                 // for (int u = 0; u < heh->k; u++)
-//                 //     printf("№ %s №", i->arr_result[u]);
-//                 // mx_printchar(10);
 //                 if ((*cmp)(i->arr_result, j->arr_result, heh->arr, heh) > 0) {
 //                     char **new = i->arr_result;
 //                     // int *new1 = i->result;
@@ -40,12 +38,28 @@
 //             }
 // }
 
+// static void print_path_rout() {
+//     mx_printstr("Path: ");
+//     mx_printstr(heh->arr[heh->j]);
+//     mx_printstr(" -> ");
+//     mx_printstr(heh->arr[heh->i]);
+//     mx_printstr("\nRoute: ");
+//     while (struct_result->arr_result[--vlad] == NULL);
+//     while (vlad > -1) {
+//         mx_printstr(struct_result->arr_result[vlad--]);
+//         if (vlad >= 0)
+//             mx_printstr(" -> ");
+//         }
+// }
+
 void mx_print_list(t_result *struct_result, t_hehx *heh, int **ser) {
     int vlad = heh->k + 1;
     int vlad1 = heh->k + 1;
+    int i = 0;
 
     // sort_list(&struct_result, cmp, heh);
     while (struct_result != NULL) {
+mx_printstr("========================================\n");
         // sort_list(&struct_result, cmp, heh);
         mx_printstr("Path: ");
         mx_printstr(heh->arr[heh->j]);
@@ -74,6 +88,7 @@ void mx_print_list(t_result *struct_result, t_hehx *heh, int **ser) {
         struct_result = struct_result->next;
         vlad = heh->k + 1;
         vlad1 = heh->k + 1;
-        mx_printchar('\n');
+        // mx_printchar('\n');
+        mx_printstr("========================================\n");
     }
 }

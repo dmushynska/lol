@@ -33,8 +33,6 @@ void mx_write_result(int ***ser, char **arr, int k) {
     save_arr(arr, heh);
     for (int j = 0; j < k; j++) {
         for (int i = j + 1; i < k; i++) {
-            heh->p = 2;
-            heh->new_arr_2 = NULL;
             heh->i = i;
             heh->j = j;
             mx_search_rout(ser, heh, j);
