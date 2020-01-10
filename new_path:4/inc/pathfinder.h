@@ -10,20 +10,14 @@ typedef struct s_add_in_func {
     int p;
     int y;
     int j;
+    int index;
     int try;
     int new;
     int lol;
-    int kek;
-    int next;
-    int vlad;
-    int new_m;
-    int save_h;
     int *str_result;
     char **arr;
     char **new_arr;
-    char **save_arr;
     char **new_arr_2;
-    char **save_arr_2;
 } t_hehx;
 
 typedef struct s_result {
@@ -53,6 +47,8 @@ void mx_del_intarr(int ***arr, int s);
 void mx_create_arr_for_heh(t_hehx *heh);
 void mx_sort_arr_int(int *arr, int size);
 void mx_test_file(int argc, char **argv);
+void mx_copy(char **arr, char ***arr2, t_hehx *heh);
+void mx_copy_int(int *arr, int **arr2, t_hehx *heh);
 void mx_search_rout(int ***ser, t_hehx *heh, int j);
 void mx_write_result(int ***ser, char **arr, int k);
 void mx_write_matrix(char **n, int **new, char **arr);

@@ -28,3 +28,22 @@ void mx_create_arr_for_heh(t_hehx *heh) {
     for (int i = 0; i < heh->k + 1; i++)
         heh->new_arr[i] = NULL;
 }
+void mx_copy_int(int *arr, int **arr2, t_hehx *heh) {
+    int *str_copy = (int *)malloc(sizeof(int) * (heh->k + 1));
+
+    for (int u = 0; u < heh->k + 1; u++)
+        str_copy[u] = arr[u];
+    *arr2 = str_copy;
+}
+
+void mx_copy(char **arr, char ***arr2, t_hehx *heh) {
+    char **new_arr = (char **)malloc(sizeof(char *) * (heh->k + 1));
+    int u = 0;
+
+    for (u = 0; u < heh->k + 1; u++)
+        new_arr[u] = NULL;
+    for (u = 0; arr[u] != NULL && u < heh->k + 1; u++) {
+        new_arr[u] = mx_strdup(arr[u]);
+    }
+    *arr2 = new_arr;
+}

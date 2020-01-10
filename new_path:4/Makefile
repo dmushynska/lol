@@ -23,7 +23,6 @@ FILES = main \
 	mx_creat_second_arr \
 	mx_write_result \
 	mx_search_rout \
-	mx_search_rout_2 \
 	mx_print_result \
 	mx_search_j \
 	mx_sort_arr_int \

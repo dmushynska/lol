@@ -25,7 +25,6 @@ void mx_push_front_new(t_result **list, int *str_result, char **new_arr, t_hehx 
         *list = mx_create_node_new(str_result, new_arr, heh);
         return;
     }
-    // mx_printstr(" kek2 ");
     *list = mx_create_node_new(str_result, new_arr, heh);
     (*list)->next = tmp;
 }
