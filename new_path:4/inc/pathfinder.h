@@ -4,10 +4,10 @@
 
 typedef struct s_add_in_func {
     int m;
-    int k;
-    int i;
+    int k; // кількість островів
+    int i; // звідки
     int h;
-    int j;
+    int j; // куди
     int index;
     int new;
     int lol;

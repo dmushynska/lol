@@ -26,12 +26,11 @@ static void auditor(int **ser, t_hehx *heh, t_result **struct_result) {
         new_heh->new = new_heh->new - ser[0][new_heh->h];
         new_heh->lol = heh->lol;
         mx_copy_int(heh->str_result, &new_heh->str_result, heh);
-        mx_copy(heh->arr, &new_heh->arr, heh);
+        new_heh->arr = heh->arr;
         mx_copy(heh->new_arr, &new_heh->new_arr, heh);
         new_heh->new_arr[new_heh->lol++] = mx_strdup(new_heh->arr[new_heh->h]);
         new_heh->str_result[new_heh->index++] = new_heh->new;
         mx_search_distance(ser, new_heh, heh->j, struct_result);
-        mx_del_strarr(&new_heh->arr);
         free(new_heh);
     }
 }
