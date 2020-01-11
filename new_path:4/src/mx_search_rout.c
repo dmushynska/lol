@@ -13,10 +13,10 @@ static void index_return(t_hehx *heh, int **ser) {
     heh->new_arr[heh->lol++] = mx_strdup(heh->arr[heh->h]);
 }
 
-static void auditor(int **ser, t_hehx *heh, int* str_result,
-t_result **struct_result) {
+static void auditor(int **ser, t_hehx *heh, t_result **struct_result) {
     for (int m = 3; ser[m][heh->h] != -1 && ser[m][heh->h] != heh->j; m++) {
         t_hehx *new_heh = (t_hehx *)malloc(sizeof(t_hehx));
+
         new_heh->k = heh->k;
         new_heh->i = heh->i;
         new_heh->j = heh->j;
@@ -39,7 +39,7 @@ t_result **struct_result) {
 void mx_search_distance(int **ser, t_hehx *heh, int j,
 t_result **struct_result) {
     while (ser[2][heh->h] != j) {
-        auditor(ser, heh, heh->str_result, struct_result);
+        auditor(ser, heh, struct_result);
         heh->new = ser[0][heh->h];
         heh->h = ser[2][heh->h];
         heh->new = heh->new - ser[0][heh->h];
@@ -86,8 +86,6 @@ void mx_search_rout(int ***ser, t_hehx *heh, int j) {
         }
         if (search_m[p] == j)
             print_first_line(ser, heh, &struct_result);
-        if (search_m[p] == search_m[p + 1])
-            break;
         p++;
     }
     mx_print_list(struct_result, heh, ser[j]);

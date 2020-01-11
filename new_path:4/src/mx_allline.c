@@ -36,6 +36,7 @@ static bool word(const char *str) {
     return true;
 }
 
+
 static bool sortchar(const char *str) {
     int i = mx_get_char_index(str, ',');
 

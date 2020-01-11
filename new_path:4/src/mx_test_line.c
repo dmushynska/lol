@@ -56,7 +56,7 @@ char **mx_test_line(const char *str) {
     int i = 0;
     int k = 0;
     char **new;
-    
+
     check(str);
     new = mx_strsplit(str, '\n');
     firstline(&new[i][k]);
