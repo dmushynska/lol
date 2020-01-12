@@ -72,18 +72,23 @@ int **ser) {
 void mx_print_list(t_result *struct_result, t_hehx *heh, int **ser) {
     int vlad = heh->k + 1;
     int vlad1 = heh->k + 1;
+    t_result *new = struct_result;
 
-    sort_list(&struct_result, cmp, heh);
+    if (struct_result->next != NULL)
+        sort_list(&struct_result, cmp, heh);
     while (struct_result != NULL) {
         mx_printstr("========================================\n");
         print_path_rout(heh, struct_result, vlad);
         print__distance(heh, struct_result, vlad1, ser);
-        free(struct_result->result);
-        mx_del_strarr(&struct_result->arr_result);
-        free(struct_result);
         struct_result = struct_result->next;
         vlad = heh->k + 1;
         vlad1 = heh->k + 1;
         mx_printstr("========================================\n");
+    }
+    while (new != NULL) {
+        free(new->result);
+        mx_del_strarr(&new->arr_result);
+        free(new);
+        new = new->next;
     }
 }
