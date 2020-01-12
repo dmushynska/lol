@@ -14,7 +14,7 @@ static void index_return(t_hehx *heh, int **ser) {
 }
 
 static void auditor(int **ser, t_hehx *heh, t_result **struct_result) {
-    for (int m = 3; ser[m][heh->h] != -1 && ser[m][heh->h] != heh->j; m++) {
+    for (int m = 3; ser[m][heh->h] != -1; m++) {
         t_hehx *new_heh = (t_hehx *)malloc(sizeof(t_hehx));
 
         new_heh->k = heh->k;
@@ -37,10 +37,11 @@ static void auditor(int **ser, t_hehx *heh, t_result **struct_result) {
 
 void mx_search_distance(int **ser, t_hehx *heh, int j,
 t_result **struct_result) {
+    auditor(ser, heh, struct_result);
     while (ser[2][heh->h] != j) {
-        auditor(ser, heh, struct_result);
         heh->new = ser[0][heh->h];
         heh->h = ser[2][heh->h];
+        auditor(ser, heh, struct_result);
         heh->new = heh->new - ser[0][heh->h];
         heh->new_arr[heh->lol++] = mx_strdup(heh->arr[heh->h]);
         heh->str_result[heh->index++] = heh->new;
