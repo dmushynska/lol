@@ -2,12 +2,13 @@
 
 static void max_int(char *str) {
     int i = 0;
+    int j = 0;
 
-    while (mx_isdigit(str[++i]) == 1) {
-        if (i >= 10) {
-            mx_printerr("error: line 1 is not valid\n");
-            exit(0);
-        }
+    while (str[j++] == '\n');
+    while (mx_isdigit(str[++i]) == 1);
+    if (i >= 6) {
+        mx_printerr("error: line 1 is not valid\n");
+        exit(0);
     }
 }
 

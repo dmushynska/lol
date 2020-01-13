@@ -1,5 +1,11 @@
 #include "pathfinder.h"
 
+void mx_printerr(const char *s) {
+    int k = mx_strlen(s);
+
+    write(2, s, k);
+}
+
 static void printcharerr(char c) {
     write(2, &c, 1);
 }

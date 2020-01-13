@@ -54,7 +54,7 @@ FILES = mx_printchar \
 SRC = $(addprefix ./src/, $(addsuffix .c, $(FILES)))
 OBJ = $(addsuffix .o, $(FILES))
 
-CLANG = -std=c11 -Werror -Wextra -Wall -Wpedantic -pipe -Ofast -march=native -fomit-frame-pointer -flto
+CLANG = -std=c11 -Werror -Wextra -Wall -Wpedantic
 INC = inc
 
 all: install uninstall

@@ -32,7 +32,7 @@ static void check_first_line(char **arr, int j) {
 }
 
 static char **create_arr(int j) {
-    char **arr = (char **)(malloc)(sizeof(char*) * (j + 1));
+    char **arr = (char **)(malloc)(sizeof(char *) * (j + 1));
 
     if (j == 0)
         exit(0);

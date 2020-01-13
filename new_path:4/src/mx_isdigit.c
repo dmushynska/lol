@@ -1,5 +1,8 @@
 #include "pathfinder.h" 
 
 bool mx_isdigit(char c) {
-    return c > 47 && c < 58;
+    if (c <= 57 && c >= 48)
+        return true;
+    else
+        return false;
 }

@@ -10,7 +10,7 @@ int **mx_creat_arr(const char *str) {
 		n[q] = (int *)malloc(sizeof(int) * (len));
 	}
 	for (i = 0; i < len; i++) {
-		 for (j = 0; j < len; j++) {
+		for (j = 0; j < len; j++) {
 			n[i][j] = -1;
 		}
 	}

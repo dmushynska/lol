@@ -4,7 +4,7 @@ OBJ = obj
 LIBMX.A = ./libmx/libmx.a
 LIB = libmx
 
-CLANG = -std=c11 -Werror -Wextra -Wall -Wpedantic -pipe -Ofast -march=native -fomit-frame-pointer -flto
+CLANG = -std=c11 -Werror -Wextra -Wall -Wpedantic
 
 FILES = main \
 	mx_test_file \
@@ -15,7 +15,6 @@ FILES = main \
 	mx_isword \
 	mx_creat_arr \
 	mx_count \
-	mx_printerr \
 	mx_printinterr \
 	mx_del_intarr \
 	mx_write_matrix \
